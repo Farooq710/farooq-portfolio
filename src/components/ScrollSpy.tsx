@@ -37,14 +37,14 @@ export default function ScrollSpy() {
           className="group flex items-center gap-2 justify-end"
           aria-label={`Scroll to ${id}`}
         >
-          <span className="text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity capitalize font-medium">
+          <span className="text-xs text-[#545864] opacity-0 group-hover:opacity-100 transition-opacity capitalize font-medium">
             {id}
           </span>
           <motion.div
             className={`rounded-full transition-all ${
               active === id
-                ? "w-3 h-3 bg-indigo-500 shadow shadow-indigo-300/50"
-                : "w-2 h-2 bg-gray-300 group-hover:bg-gray-400"
+                ? "w-3 h-3 bg-gradient-to-r from-[#3245ff] to-[#b845ed]"
+                : "w-2 h-2 bg-[#545864] group-hover:bg-[#858b98]"
             }`}
           />
         </button>

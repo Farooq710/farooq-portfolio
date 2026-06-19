@@ -24,7 +24,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
     <AnimatePresence>
       {progress <= 100 && (
         <motion.div
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#1f232e]"
           exit={{ opacity: 0, scale: 1.05 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
         >
@@ -34,8 +34,8 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative mb-8"
           >
-            <div className="w-24 h-24 rounded-2xl border-2 border-indigo-400/60 flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-500 shadow-xl shadow-indigo-300/40">
-              <span className="text-4xl font-bold text-white">FK</span>
+            <div className="w-24 h-24 rounded-2xl border border-[#3245ff]/40 flex items-center justify-center bg-gradient-to-br from-[#3245ff] to-[#b845ed]">
+              <span className="text-4xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>FK</span>
             </div>
           </motion.div>
 
@@ -43,14 +43,14 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-gray-500 text-sm mb-6 tracking-widest uppercase"
+            className="text-[#858b98] text-sm mb-6 tracking-widest uppercase"
           >
             Loading Portfolio
           </motion.p>
 
-          <div className="w-48 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+          <div className="w-48 h-1 bg-[#17191e] rounded-full overflow-hidden border border-[#545864]/20">
             <motion.div
-              className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full"
+              className="h-full bg-gradient-to-r from-[#3245ff] via-[#b845ed] to-[#4bf3c8] rounded-full"
               style={{ width: `${progress}%` }}
             />
           </div>

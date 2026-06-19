@@ -15,6 +15,12 @@ export const resumeData = {
     cloud: [
       "AWS (EC2, VPC, S3, IAM, CloudWatch)",
       "GCP",
+      "GKE",
+      "Cloud Run",
+      "Cloud IAM",
+      "Compute Engine",
+      "Cloud Build & Deploy",
+      "Cloud Monitoring & Logging",
     ],
     configMgmt: ["Ansible", "Ansible Playbooks"],
     containerization: ["Docker", "Kubernetes (Amazon EKS)"],
@@ -91,6 +97,7 @@ export const resumeData = {
   ],
   certifications: [
     "Google Cloud Certified — Associate Cloud Engineer",
+    "Google Cloud Certified — Professional Cloud DevOps Engineer",
     "Oracle Cloud Infrastructure (OCI) 2025 — Certified Architect Associate",
     "AWS Certified — Cloud Practitioner",
     "Microsoft Certified — Azure AI Fundamentals (AI-900)",
@@ -98,7 +105,7 @@ export const resumeData = {
   impactHighlights: [
     { metric: "99.9%", label: "Server Uptime" },
     { metric: "92%+", label: "ML Prediction Accuracy" },
-    { metric: "4", label: "Cloud Certifications" },
+    { metric: "5", label: "Cloud Certifications" },
     { metric: "Enterprise", label: "AI Agent in Production" },
   ],
 };

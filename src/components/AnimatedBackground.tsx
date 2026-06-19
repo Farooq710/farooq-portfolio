@@ -26,7 +26,7 @@ export default function AnimatedBackground() {
 
     let animationId: number;
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 25 : 50;
+    const particleCount = isMobile ? 25 : 55;
     const particles: Particle[] = [];
 
     const resize = () => {
@@ -40,11 +40,13 @@ export default function AnimatedBackground() {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.15 + 0.05,
-        hue: Math.random() * 60 + 200, // blue-violet range
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        radius: Math.random() * 1.8 + 0.4,
+        opacity: Math.random() * 0.18 + 0.04,
+        hue: Math.random() < 0.6
+          ? 230 + Math.random() * 40   // blue-violet range (nebula)
+          : 270 + Math.random() * 30,  // violet-purple range
       });
     }
 
@@ -56,9 +58,9 @@ export default function AnimatedBackground() {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 140) {
+          if (dist < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(99, 102, 241, ${0.04 * (1 - dist / 140)})`;
+            ctx.strokeStyle = `rgba(50, 69, 255, ${0.05 * (1 - dist / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -75,7 +77,7 @@ export default function AnimatedBackground() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 80%, 60%, ${p.opacity})`;
+        ctx.fillStyle = `hsla(${p.hue}, 85%, 65%, ${p.opacity})`;
         ctx.fill();
       }
 
@@ -95,7 +97,7 @@ export default function AnimatedBackground() {
         className="fixed inset-0 -z-20"
         style={{
           background:
-            "radial-gradient(ellipse at 20% 30%, rgba(139,92,246,0.07) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(59,130,246,0.06) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(236,72,153,0.04) 0%, transparent 60%), #fafbff",
+            "radial-gradient(ellipse at 50% 0%, rgba(50,69,255,0.18) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(184,69,237,0.12) 0%, transparent 45%), radial-gradient(ellipse at 20% 80%, rgba(50,69,255,0.07) 0%, transparent 40%), #1f232e",
         }}
       />
       <canvas
